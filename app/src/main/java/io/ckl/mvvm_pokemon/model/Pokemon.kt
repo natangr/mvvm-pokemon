@@ -35,12 +35,12 @@ class Pokemon {
     @SerializedName("game_indices")
     @Expose
     var gameIndices: List<GameIndex>? = null
-    @SerializedName("held_items")
-    @Expose
-    var heldItems: List<Any>? = null
-    @SerializedName("location_area_encounters")
-    @Expose
-    var locationAreaEncounters: List<Any>? = null
+//    @SerializedName("held_items")
+//    @Expose
+//    var heldItems: List<Any>? = null
+//    @SerializedName("location_area_encounters")
+//    @Expose
+//    var locationAreaEncounters: List<Any>? = null
     @SerializedName("moves")
     @Expose
     var moves: List<Move>? = null
