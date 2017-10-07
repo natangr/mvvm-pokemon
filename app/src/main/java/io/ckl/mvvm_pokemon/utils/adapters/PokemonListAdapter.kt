@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import io.ckl.mvvm_pokemon.R
 import io.ckl.mvvm_pokemon.model.PokemonMinified
+import io.ckl.mvvm_pokemon.utils.listeners.PokemonListListener
 import io.ckl.mvvm_pokemon.utils.view_holders.PokemonViewHolder
 
-class PokemonListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class PokemonListAdapter(val listener: PokemonListListener): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var pokemons: List<PokemonMinified> = listOf()
         set(value) {
@@ -25,6 +26,7 @@ class PokemonListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
         if (holder is PokemonViewHolder) {
             holder.pokemon = pokemons.getOrNull(position)
+            holder.listener = listener
         }
     }
 }

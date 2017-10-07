@@ -31,11 +31,11 @@ class Pokemon {
     var abilities: List<Ability>? = null
     @SerializedName("forms")
     @Expose
-    var forms: List<PokemonForm>? = null
+    var forms: List<PokemonFormMinified>? = null
     @SerializedName("game_indices")
     @Expose
     var gameIndices: List<GameIndex>? = null
-//    @SerializedName("held_items")
+    //    @SerializedName("held_items")
 //    @Expose
 //    var heldItems: List<Any>? = null
 //    @SerializedName("location_area_encounters")
@@ -53,5 +53,4 @@ class Pokemon {
     @SerializedName("types")
     @Expose
     var types: List<Type>? = null
-
 }

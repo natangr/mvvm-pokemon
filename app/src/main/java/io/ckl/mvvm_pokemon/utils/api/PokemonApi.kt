@@ -1,6 +1,7 @@
 package io.ckl.mvvm_pokemon.utils.api
 
 import io.ckl.mvvm_pokemon.model.Pokemon
+import io.ckl.mvvm_pokemon.model.PokemonForm
 import io.ckl.mvvm_pokemon.model.PokemonMinified
 import io.ckl.mvvm_pokemon.model.ResponseList
 import io.reactivex.Observable
@@ -14,4 +15,7 @@ interface PokemonApi {
 
     @GET("pokemon")
     fun fetchPokemons(): Observable<ResponseList<PokemonMinified>>
+
+    @GET("{formPath}")
+    fun fetchPokemonForm(@Path("formPath") formUrl: String?): Observable<PokemonForm>
 }
