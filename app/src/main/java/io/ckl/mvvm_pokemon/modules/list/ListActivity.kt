@@ -5,14 +5,14 @@ import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.widget.ListView
 import io.ckl.mvvm_pokemon.R
 import io.ckl.mvvm_pokemon.model.PokemonMinified
+import io.ckl.mvvm_pokemon.modules.base.BaseActivity
 import io.ckl.mvvm_pokemon.utils.adapters.PokemonListAdapter
 import io.ckl.mvvm_pokemon.utils.listeners.PokemonListListener
 import kotlinx.android.synthetic.main.activity_list.*
 
-class ListActivity: AppCompatActivity(), PokemonListListener {
+class ListActivity: BaseActivity(), PokemonListListener {
 
     val adapter = PokemonListAdapter(this)
     var viewModel: ListViewModel? = null
@@ -25,6 +25,8 @@ class ListActivity: AppCompatActivity(), PokemonListListener {
     }
 
     private fun setupView() {
+        setSupportActionBar(toolbar)
+
         pokemonRecyclerView.layoutManager = LinearLayoutManager(this)
         pokemonRecyclerView.adapter = adapter
 

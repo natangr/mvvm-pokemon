@@ -21,7 +21,7 @@ class PokemonViewHolder(val view: View): RecyclerView.ViewHolder(view) {
     var pokemon: PokemonMinified? = null
         set(value) {
             field = value
-            view.pokemonNameTextView.text = pokemon?.name
+            view.pokemonNameTextView.text = pokemon?.name?.capitalize()
 //            view.pokemonNumberTextView.text = pokemon?.id.toString()
 //            view.pokemonTypeTextView.text = pokemon?.types?.joinToString(separator = "/", transform = { it.name ?: "" })
         }

@@ -30,6 +30,7 @@ class ListViewModel: ViewModel() {
     fun onPokemonItemClicked(context: Context, pokemon: PokemonMinified) {
         val intent = Intent(context, DetailActivity::class.java)
         intent.putExtra(IntentConstants.POKEMON_ID, pokemon.id)
+        intent.putExtra(IntentConstants.POKEMON_NAME, pokemon.name)
         context.startActivity(intent)
     }
 }

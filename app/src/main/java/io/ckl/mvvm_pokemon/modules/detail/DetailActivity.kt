@@ -4,13 +4,16 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import com.bumptech.glide.Glide
 import io.ckl.mvvm_pokemon.R
 import io.ckl.mvvm_pokemon.model.Pokemon
 import io.ckl.mvvm_pokemon.model.PokemonForm
+import io.ckl.mvvm_pokemon.modules.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_detail.*
+import kotlinx.android.synthetic.main.activity_detail.view.*
 
-class DetailActivity: AppCompatActivity() {
+class DetailActivity: BaseActivity() {
 
     var viewModel: DetailViewModel? = null
 
@@ -23,6 +26,13 @@ class DetailActivity: AppCompatActivity() {
     }
 
     private fun setupView() {
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
+        viewModel?.pokemonName?.observe(this, Observer {
+            title = it?.capitalize()
+        })
         viewModel?.pokemon?.observe(this, Observer {
             onPokemonLoaded(it)
         })
@@ -32,6 +42,8 @@ class DetailActivity: AppCompatActivity() {
     }
 
     private fun onPokemonLoaded(pokemon: Pokemon?) {
+        progress.visibility = View.GONE
+        contentScrollView.visibility = View.VISIBLE
         pokemonIdTextView.text = pokemon?.id?.toString()
     }
 

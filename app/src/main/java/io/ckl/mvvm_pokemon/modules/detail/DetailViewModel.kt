@@ -12,10 +12,12 @@ import io.ckl.mvvm_pokemon.utils.repositories.PokemonApiRepository
 class DetailViewModel: ViewModel() {
 
     private val pokemonRepository: PokemonRepository = PokemonApiRepository()
+    var pokemonName = MediatorLiveData<String>()
     var pokemon = MediatorLiveData<Pokemon>()
     var pokemonForm = MediatorLiveData<PokemonForm>()
 
     fun onCreate(extras: Bundle?) {
+        pokemonName.value = extras?.getString(IntentConstants.POKEMON_NAME)
         val pokemonId = extras?.getInt(IntentConstants.POKEMON_ID) ?: return
         loadPokemon(pokemonId)
     }

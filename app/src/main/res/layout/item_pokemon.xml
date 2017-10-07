@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="72dp">
+    android:layout_height="72dp"
+    android:background="?android:selectableItemBackground">
 
     <ImageView
         android:id="@+id/pokemonImageView"
@@ -19,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="1px"
         android:layout_marginBottom="0dp"
-        android:background="@color/separator"
+        android:background="@color/divider"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <TextView
@@ -30,7 +31,7 @@
         android:layout_marginStart="72dp"
         android:layout_marginTop="14dp"
         android:lines="1"
-        android:textColor="@color/black"
+        android:textColor="@color/primary_text"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +46,7 @@
         android:layout_marginTop="14dp"
         android:gravity="end"
         android:lines="1"
-        android:textColor="@color/black"
+        android:textColor="@color/primary_text"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@id/pokemonNameTextView"
         app:layout_constraintTop_toTopOf="parent"
@@ -59,6 +60,7 @@
         android:layout_marginStart="72dp"
         android:layout_marginTop="2dp"
         android:lines="1"
+        android:textColor="@color/secondary_text"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
