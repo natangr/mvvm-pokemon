@@ -3,7 +3,6 @@ package io.ckl.mvvm_pokemon.modules.detail
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.bumptech.glide.Glide
 import io.ckl.mvvm_pokemon.R
@@ -11,7 +10,6 @@ import io.ckl.mvvm_pokemon.model.Pokemon
 import io.ckl.mvvm_pokemon.model.PokemonForm
 import io.ckl.mvvm_pokemon.modules.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_detail.*
-import kotlinx.android.synthetic.main.activity_detail.view.*
 
 class DetailActivity: BaseActivity() {
 

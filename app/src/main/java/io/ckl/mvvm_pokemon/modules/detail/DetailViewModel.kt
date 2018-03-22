@@ -6,8 +6,8 @@ import android.os.Bundle
 import io.ckl.mvvm_pokemon.model.Pokemon
 import io.ckl.mvvm_pokemon.model.PokemonForm
 import io.ckl.mvvm_pokemon.utils.constants.IntentConstants
-import io.ckl.mvvm_pokemon.utils.repositories.PokemonRepository
 import io.ckl.mvvm_pokemon.utils.repositories.PokemonApiRepository
+import io.ckl.mvvm_pokemon.utils.repositories.PokemonRepository
 
 class DetailViewModel: ViewModel() {
 
